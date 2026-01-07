@@ -26,11 +26,11 @@
 
 # See https://wiki.zshell.dev/community/zsh_plugin_standard#standard-plugins-hash
 declare -gA STARSHIP
-$STARSHIP[_PLUGIN_DIR]="${0:h}"
-$STARSHIP[_ALIASES]=""
-$STARSHIP[_FUNCTIONS]=""
+STARSHIP[_PLUGIN_DIR]="${0:h}"
+STARSHIP[_ALIASES]=""
+STARSHIP[_FUNCTIONS]=""
 
-$STARSHIP[_OLD_STARSHIP_CONFIG]="${STARSHIP_CONFIG}"
+STARSHIP[_OLD_STARSHIP_CONFIG]="${STARSHIP_CONFIG}"
 
 ############################################################################
 # Internal Support Functions
