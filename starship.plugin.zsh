@@ -78,8 +78,6 @@ starship_plugin_init() {
     builtin setopt extended_glob warn_create_global typeset_silent no_short_loops rc_quotes no_auto_pushd
 
     export STARSHIP_CONFIG="$(xdg_config_for starship)/starship.toml"
-
-    eval "$(starship init zsh)"
 }
 .starship_remember_fn starship_plugin_init
 
@@ -121,5 +119,6 @@ starship_plugin_unload() {
 ############################################################################
 
 starship_plugin_init
+eval "$(starship init zsh)"
 
 true
