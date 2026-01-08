@@ -1,18 +1,15 @@
 # -*- mode: sh; eval: (sh-set-shell "zsh") -*-
 #
 # Plugin Name: starship
+# Description: Setup starship prompt for Zsh shells.
 # Repository: https://github.com/johnstonskj/zsh-starship-plugin
-#
-# Description:
-#
-#   Setup starship prompt for Zsh shells.
 #
 # Public variables:
 #
 # * `STARSHIP`; plugin-defined global associative array with the following keys:
-#   * \`_PLUGIN_DIR\`; the directory the plugin is sourced from.
-#   * \`_FUNCTIONS\`; a list of all functions defined by the plugin.
-#   * \`_OLD_STARSHIP_CONFIG\`; the old starship configuration value.
+#   * `_PLUGIN_DIR`; the directory the plugin is sourced from.
+#   * `_FUNCTIONS`; a list of all functions defined by the plugin.
+#   * `_OLD_STARSHIP_CONFIG`; the old starship configuration value.
 # * `STARSHIP_CONFIG`; location of the starship configuration file.
 #
 
