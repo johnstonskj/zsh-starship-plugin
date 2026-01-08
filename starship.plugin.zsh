@@ -30,6 +30,7 @@ STARSHIP[_PLUGIN_DIR]="${0:h}"
 STARSHIP[_ALIASES]=""
 STARSHIP[_FUNCTIONS]=""
 
+# Saving the current state for any modified global environment variables.
 STARSHIP[_OLD_STARSHIP_CONFIG]="${STARSHIP_CONFIG}"
 
 ############################################################################
@@ -104,11 +105,12 @@ starship_plugin_unload() {
     for alias in ${aliases[@]}; do
         unalias "${alias}"
     done
+
+    # Reset global environment variables .
+    export STARSHIP_CONFIG="${STARSHIP[_OLD_STARSHIP_CONFIG]}"
     
     # Remove the global data variable.
     unset STARSHIP
-
-    export STARSHIP_CONFIG="${STARSHIP[_OLD_STARSHIP_CONFIG]}"
 
     # Remove this function.
     unfunction starship_plugin_unload
