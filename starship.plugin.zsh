@@ -20,11 +20,7 @@ starship_plugin_init() {
     @zplugins_envvar_save starship STARSHIP_CONFIG
     export STARSHIP_CONFIG="$(xdg_config_for starship)/starship.toml"
 
-    local completion_dir="$(@zplugins_plugin_functions_dir starship)"
-    if [[ ! -d "${completion_dir}" ]]; then
-        mkdir -p "${completion_dir}"
-    fi
-    local completion_file="${completion_dir}/_starship"
+    local completion_file="$(@zplugins_plugin_functions_dir starship create)/_starship"
     starship completions zsh > "${completion_file}"
     autoload -Uz _starship
     @zplugins_remember_fn starship _starship
