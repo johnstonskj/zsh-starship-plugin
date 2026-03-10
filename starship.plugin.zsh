@@ -1,8 +1,10 @@
 # -*- mode: sh; eval: (sh-set-shell "zsh") -*-
 #
-# @name starship
-# @brief Setup starship prompt for Zsh shells.
-# @repository https://github.com/johnstonskj/zsh-starship-plugin
+# @name: starship
+# @brief: Setup Starship prompt for Zsh shells.
+# @repository: https://github.com/johnstonskj/zsh-starship-plugin
+# @version: 0.1.1
+# @license: MIT AND Apache-2.0
 #
 # ### Public Variables
 #
