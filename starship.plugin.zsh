@@ -11,22 +11,27 @@
 # * `STARSHIP_CONFIG`; location of the starship configuration file.
 #
 
+###################################################################################################
+# @section Setup
+# @description Standard path and variable setup.
+#
+
+STARSHIP_PLUGIN_PATH="$(@zplugins_normalize_zero "$0")"
+
 ############################################################################
 # @section Lifecycle
 # @description Plugin lifecycle functions.
 #
 
+@zplugins_declare_plugin_dependencies starship completion
+
 starship_plugin_init() {
     builtin emulate -L zsh
 
     @zplugins_envvar_save starship STARSHIP_CONFIG
-    export STARSHIP_CONFIG="$(xdg_config_for starship)/starship.toml"
+    typeset -g STARSHIP_CONFIG="$(xdg_config_for starship)/starship.toml"
 
-    local completion_dir="$(@zplugins_plugin_functions_dir starship create)"
-    local completion_file="${completion_dir}/_starship"
-    starship completions zsh > "${completion_file}"
-    autoload -Uz _starship
-    @zplugins_remember_fn starship _starship
+    @completion_generate_local_file_from starship completions zsh
 }
 
 starship_plugin_unload() {
